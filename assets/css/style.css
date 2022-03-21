@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+
+h1, h2, p {
+    text-align: center;
+    margin: 1% 0;
+}
+
+table {
+    width: 369px;
+    height: 369px;
+    margin: auto;
+}
+
+
+td {
+    
+    height: 123px;
+    width: 123px;
+    border: 1px solid;
+}
+
+
+svg {
+    
+    padding: 4px;
+}
