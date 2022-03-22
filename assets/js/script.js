@@ -79,11 +79,11 @@ function isWon() {
     let max = Math.max.apply(null, sums);
     let min = Math.min.apply(null, sums);
     
-    if (max === 3 && left != 9) {
+    if (max === 3 && left != 0) {
 
         return "Joueur 1";
     }
-    if (min === -3 && left !=9) {
+    if (min === -3 && left !=0) {
 
         return "Joueur 2";
     }
