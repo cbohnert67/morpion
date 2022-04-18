@@ -12,6 +12,8 @@ function initGame() {
     grid = [[0,0,0], [0,0,0], [0,0,0]];
     left = 9;
     displayRules();
+    document.getElementById('info').style.visibility = "hidden";
+    
     if (games===0) {
         button.addEventListener('click', initListeners);
         games++;
@@ -19,7 +21,6 @@ function initGame() {
         
         button.innerText = "RECOMMENCER";
         button.addEventListener('click', initGame);
-
     }
     
 }
@@ -41,8 +42,10 @@ function initListeners() {
     for (let row of rows) {
         for (let cell of row.cells) {
             document.getElementById(cell.id).addEventListener('click', playTurn);
+            
         }
     }
+
     button.disabled = true;
 }
 
@@ -103,32 +106,46 @@ function playTurn(elt) {
     } 
      if (turn === false) {
         turnAction(elt, cross, -1);
+        
         return;
     }
 }
+
+
 
 function displayRules() {
     document.querySelector("p").innerText = rules;
 }
 
 function displayWinner(player) {
-   
-    document.getElementsByTagName('p')[0].innerText = `${player} a gagné !`;
+
+    document.getElementById('info').style.visibility = "visible";
+    document.getElementById('info').style.zIndex = 1;
+    document.getElementById('info').style.color = "white";
+    document.getElementById('info').style.backgroundColor = "rgba(0,0,0, 0.8)"
+    document.getElementById('info').innerText = `${player} a gagné !`;
     
 }
 
 function displayDraw() {
-    document.getElementsByTagName('p')[0].innerText = "Egalité !";
+    document.getElementById('info').style.visibility = "visible";
+    document.getElementById('info').style.zIndex = 1;
+    document.getElementById('info').style.color = "white";
+    document.getElementById('info').style.backgroundColor = "rgba(0,0,0, 0.8)"
+    document.getElementById('info').innerText ="Egalité !";
+    
+   
 }
 
 function turnAction(elt, svg, player) {
+        
         elt.target.innerHTML = svg
         elt.target.removeEventListener('click', playTurn);
         let row = parseInt(elt.target.id[0]);
         let col = parseInt(elt.target.id[1]);
         grid[row-1][col-1]=player;
         turn = !turn;
-
+        
         if (isWon()==="Joueur 1") {
             displayWinner("Joueur 1");
             remListeners();
