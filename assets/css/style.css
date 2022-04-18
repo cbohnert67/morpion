@@ -8,10 +8,10 @@
 
 img {
     position:relative;
-    top: -165px;
-    left: 850px;
+    top: -120px;
+    left: 630px;
     rotate: 70deg;
-    height: 150px;
+    height: 120px;
     width: 50%;
 }
 
@@ -25,7 +25,7 @@ h1 {
 
 p {
     position: relative;
-    top: -150px;
+    top: -120px;
     font-size: 1vw;
     font-family: 'M PLUS 1', sans-serif;
 }
@@ -69,14 +69,14 @@ svg {
     font-size: 1.5vw;
     margin: auto;
     cursor: pointer;
-    width: 15%;
+    width: 20%;
     font-family: 'Palette Mosaic', cursive;
     background-color: #000;
   }
 
   footer {
     position: relative;
-    top: -30px;
+    top: -50px;
     text-align: center;
     margin: 0.5% 0 0.5% 0;
     font-family: 'M PLUS 1', sans-serif;
