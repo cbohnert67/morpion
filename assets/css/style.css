@@ -75,6 +75,8 @@ svg {
   }
 
   footer {
+    position: relative;
+    top: -30px;
     text-align: center;
     margin: 0.5% 0 0.5% 0;
     font-family: 'M PLUS 1', sans-serif;
