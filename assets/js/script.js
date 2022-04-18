@@ -79,16 +79,16 @@ function isWon() {
     let max = Math.max.apply(null, sums);
     let min = Math.min.apply(null, sums);
     
-    if (max === 3 && left != 0) {
+    if (max === 3 && left <= 0) {
 
         return "Joueur 1";
     }
-    if (min === -3 && left !=0) {
+    if (min === -3 && left <=0) {
 
         return "Joueur 2";
     }
 
-    return "";
+    return "Egalite";
 }
 
 
@@ -142,7 +142,7 @@ function turnAction(elt, svg, player) {
             setTimeout(initGame, 3000);
             
         }
-        if (!isWon() && left === 0) {
+        if (isWon()==="Egalite" && left === 0) {
             remListeners();
             displayDraw();
             button.disabled = false;
